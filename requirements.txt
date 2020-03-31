@@ -4,3 +4,5 @@ coverage
 pytest
 pytest-cov
 pylint
+biopython
+plotly
