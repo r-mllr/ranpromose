@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  run:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    image: ranpromose
+

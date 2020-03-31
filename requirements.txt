@@ -1,0 +1,6 @@
+flake8
+bandit
+coverage
+pytest
+pytest-cov
+pylint
