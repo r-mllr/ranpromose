@@ -3,8 +3,10 @@ import ranpromose.resources.sequence as seqm
 
 
 def test_generate_sequences():
-    seqs = seqm.generate_sequence(5, 50, 8, 2, 6, 2, 15)
+    seqs, m1, m2 = seqm.generate_sequence(5, 50, 8, 2, 6, 2, 15)
     assert len(seqs) == 5
+    assert len(m1) == 8
+    assert len(m2) == 6
     for s in seqs:
         assert len(s) == 50
 

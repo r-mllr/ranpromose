@@ -25,7 +25,7 @@ def generate_sequence(t, n, l1, d1, l2, d2, spacer):
     m2 = random_sequence(l2)
     return [fill_sequence(mutate(m1, d1) +
             mutate(random_sequence(spacer)) +
-            mutate(m2, d2), n) for _ in range(t)]
+            mutate(m2, d2), n) for _ in range(t)], m1, m2
 
 
 def random_sequence(k=int()):
@@ -65,6 +65,16 @@ def fill_sequence(seq, n):
         else:
             seq = seq + c
     return seq
+
+
+def kmers(seq, k):
+    return [seq[i:i+k] for i in range(0, len(seq) - k + 1)]
+
+
+def project(seq, d=None, indexes=None):
+    if indexes is None:
+        indexes = sys_random.sample(range(0, len(seq)), d)
+    return "".join([seq[i] for i in sorted(indexes)])
 
 
 def edit_distance(seq1, seq2):
